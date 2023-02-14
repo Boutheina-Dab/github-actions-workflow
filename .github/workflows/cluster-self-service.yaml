@@ -1,0 +1,32 @@
+name: Cluster self service
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      bg_repo:
+        description: 'give bg repo name'
+        required: true
+        type: string
+jobs:
+
+  apply-cluster-config:
+    runs-on: tks
+
+    steps:
+      - name: checkout main tks repo
+        uses: actions/checkout@v3
+        with:
+          path: main 
+      - name: Checkout cluster self service repo
+        uses: actions/checkout@v3
+        with:
+          repository: my-org/my-tools
+          path: my-tools
