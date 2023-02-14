@@ -9,6 +9,7 @@ on:
 jobs:
 
   apply-test:
+    runs-on: test
 
     steps:
       - name: checkout main workflow repo
