@@ -1,32 +1,25 @@
-name: Cluster self service
+name: test github workflow
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
-      bg_repo:
-        description: 'give bg repo name'
+      repo:
+        description: 'give repo name'
         required: true
         type: string
 jobs:
 
-  apply-cluster-config:
-    runs-on: tks
+  apply-test:
 
     steps:
-      - name: checkout main tks repo
+      - name: checkout main workflow repo
         uses: actions/checkout@v3
         with:
           path: main 
-      - name: Checkout cluster self service repo
+      - name: Checkout second repo
         uses: actions/checkout@v3
         with:
-          repository: my-org/my-tools
-          path: my-tools
+          repository: Boutheina-Dab/${{ inputs.repo }}
+          path: ${{ inputs.repo }}
+      - name: ls on second repo
+        run: |
+          ls -la
