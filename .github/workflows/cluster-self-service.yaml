@@ -27,5 +27,7 @@ jobs:
       - name: cat yaml file
         run: |
           cat ${{ inputs.repo }}/test.txt
-          
+      - name: echo test message
+        run: |
+          echo "this is a test message for workflow"
       
