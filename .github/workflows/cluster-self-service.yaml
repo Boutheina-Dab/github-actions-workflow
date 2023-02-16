@@ -21,6 +21,10 @@ jobs:
         with:
           repository: Boutheina-Dab/${{ inputs.repo }}
           path: ${{ inputs.repo }}
+      - name: "Read file contents"
+        uses: andstor/file-reader-action@v1
+        with:
+          path: ${{ inputs.repo }}/test.txt
       - name: ls on second repo
         run: |
           ls -la
