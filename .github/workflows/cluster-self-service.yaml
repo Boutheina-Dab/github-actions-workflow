@@ -28,7 +28,6 @@ jobs:
         path: "test.txt"
       - name: File contents
         run: echo "${ steps.read_file.outputs.contents }"
-        
       - name: ls on second repo
         run: |
           ls -la
