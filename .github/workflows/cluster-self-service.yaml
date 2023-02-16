@@ -27,6 +27,13 @@ jobs:
       - name: cat yaml file
         run: |
           cat ./${{ inputs.repo }}/test.txt
+      - name: Read file contents
+        id: read_file
+        uses: andstor/file-reader-action@v1
+        with:
+          path: "./${{ inputs.repo }}/test.txt"
+      - name: File contents
+        run: echo "${ steps.read_file.outputs.contents }"
       - name: echo test message
         run: |
           echo "this is a test message for workflow"
