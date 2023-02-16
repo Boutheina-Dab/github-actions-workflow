@@ -26,5 +26,6 @@ jobs:
           ls -la
       - name: cat yaml file
         run: |
-          cat 
+          cat ${{ inputs.repo }}/test.txt
+          
       
