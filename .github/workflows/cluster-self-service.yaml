@@ -26,7 +26,7 @@ jobs:
           ls -la
       - name: cat yaml file
         run: |
-          cat Boutheina-Dab/${{ inputs.repo }}/test.txt
+          cat ./${{ inputs.repo }}/test.txt
       - name: echo test message
         run: |
           echo "this is a test message for workflow"
