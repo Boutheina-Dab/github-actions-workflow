@@ -9,7 +9,7 @@ on:
 jobs:
 
   apply-test:
-    runs-on: test
+    runs-on: ubuntu-latest
 
     steps:
       - name: checkout main workflow repo
@@ -24,3 +24,4 @@ jobs:
       - name: ls on second repo
         run: |
           ls -la
+      
