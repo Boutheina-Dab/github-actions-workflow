@@ -24,4 +24,7 @@ jobs:
       - name: ls on second repo
         run: |
           ls -la
+      - name: cat yaml file
+        run: |
+          cat 
       
