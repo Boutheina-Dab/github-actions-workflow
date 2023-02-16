@@ -1,4 +1,4 @@
-name: test github workflow
+name: read file workflows
 on:
   workflow_dispatch:
     inputs:
