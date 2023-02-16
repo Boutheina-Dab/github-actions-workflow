@@ -22,10 +22,10 @@ jobs:
           repository: Boutheina-Dab/${{ inputs.repo }}
           path: ${{ inputs.repo }}
       - name: Read file contents
-      id: read_file
-      uses: andstor/file-reader-action@v1
-      with:
-        path: "test.txt"
+        id: read_file
+        uses: andstor/file-reader-action@v1
+        with:
+          path: "test.txt"
       - name: File contents
         run: echo "${ steps.read_file.outputs.contents }"
       - name: ls on second repo
