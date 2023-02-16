@@ -1,0 +1,40 @@
+name: test github workflow
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: 'give repo name'
+        required: true
+        type: string
+jobs:
+
+  apply-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout main workflow repo
+        uses: actions/checkout@v3
+        with:
+          path: main 
+      - name: Checkout second repo
+        uses: actions/checkout@v3
+        with:
+          repository: Boutheina-Dab/${{ inputs.repo }}
+          path: ${{ inputs.repo }}
+      - name: Read file contents
+      id: read_file
+      uses: andstor/file-reader-action@v1
+      with:
+        path: "test.txt"
+      - name: File contents
+        run: echo "${ steps.read_file.outputs.contents }"
+      - name: ls on second repo
+        run: |
+          ls -la
+      - name: cat yaml file
+        run: |
+          cat Boutheina-Dab/${{ inputs.repo }}/test.txt
+      - name: echo test message
+        run: |
+          echo "this is a test message for workflow"
+      
