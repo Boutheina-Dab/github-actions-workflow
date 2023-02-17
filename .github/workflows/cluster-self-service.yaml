@@ -26,7 +26,7 @@ jobs:
           ls -la ./${{ inputs.repo }}
       - name: ls main
         run: |
-          cat ./main/README.md
+          ls -la
       - name: cat yaml file
         run: |
           cat ./${{ inputs.repo }}/test.md
