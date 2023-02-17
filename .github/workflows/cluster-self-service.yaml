@@ -23,7 +23,10 @@ jobs:
           path: ${{ inputs.repo }}
       - name: ls on second repo
         run: |
-          ls -la
+          ls -la ./${{ inputs.repo }}
+      - name: ls main
+        run: |
+          ls -la ./main
       - name: cat yaml file
         run: |
           cat ./${{ inputs.repo }}/test.md
