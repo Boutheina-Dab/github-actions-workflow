@@ -14,8 +14,8 @@ jobs:
     steps:
       - name: checkout main workflow repo
         uses: actions/checkout@v3
-        with:
-          path: main 
+        # with:
+        #   path: main 
       - name: Checkout second repo
         uses: actions/checkout@v3
         with:
