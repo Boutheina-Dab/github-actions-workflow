@@ -21,6 +21,7 @@ jobs:
         with:
           repository: Boutheina-Dab/${{ inputs.repo }}
           path: ${{ inputs.repo }}
+          token: ${{ secrets.PAT_TOKEN }}
       - name: ls on second repo
         run: |
           ls -la ./${{ inputs.repo }}
